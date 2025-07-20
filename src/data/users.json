@@ -47,5 +47,12 @@
     "email": "sally.johnson@email.com",
     "address": "456 Maple Drive, Portland, OR 97205",
     "phone": "503-555-0198"
+  },
+  {
+    "id": 8,
+    "name": "Jessica Ramirez",
+    "email": "jessica.ramirez82@gmail.com",
+    "address": "1842 Willowbrook Lane, Austin, TX 78758",
+    "phone": "+1-512-555-3472"
   }
 ]
