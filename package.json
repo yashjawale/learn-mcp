@@ -1,7 +1,7 @@
 {
   "name": "learn_mcp_server_and_client",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "server:build": "tsc",
     "server:build:watch": "tsc --watch",
