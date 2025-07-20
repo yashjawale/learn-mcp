@@ -40,5 +40,12 @@
     "email": "jenny.wilson@example.com",
     "address": "789 Pine Avenue, Springfield, CA 94102",
     "phone": "415-789-2345"
+  },
+  {
+    "id": 7,
+    "name": "Sally",
+    "email": "sally.johnson@email.com",
+    "address": "456 Maple Drive, Portland, OR 97205",
+    "phone": "503-555-0198"
   }
 ]
