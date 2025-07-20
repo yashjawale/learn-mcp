@@ -4,7 +4,7 @@ import { confirm, input, select } from '@inquirer/prompts';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 import { Prompt, PromptMessage, Tool } from '@modelcontextprotocol/sdk/types.js';
-import { generateText } from 'ai';
+import { generateText, jsonSchema, ToolSet } from 'ai';
 
 const mcp = new Client({
 	name: "Learn MCP Client",
@@ -102,8 +102,38 @@ async function main() {
 					await handlePrompt(prompt)
 				}
 				break
+			case "Query":
+				await handleQuery(tools)
+				break
 		}
 	}
+}
+
+async function handleQuery(tools: Tool[]) {
+	const query = await input({message: "Enter your query: "})
+
+	const { text, toolResults } = await generateText({
+		model: google("gemini-2.0-flash"),
+		prompt: query,
+		tools: tools.reduce((obj, tool) => ({
+			...obj,
+			[tool.name]: {
+				description: tool.description,
+				parameters: jsonSchema(tool.inputSchema),
+				execute: async (args: Record<string, any>) => {
+					return await mcp.callTool({
+						name: tool.name,
+						arguments: args
+					})
+				}
+			}
+		}), {} as ToolSet)
+	})
+
+	console.log(
+		// @ts-expect-error
+		text || toolResults[0]?.result?.content[0]?.text || "No text generated"
+	)
 }
 
 async function handleTool(tool: Tool) {
