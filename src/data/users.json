@@ -68,5 +68,18 @@
     "email": "test@test.com",
     "address": "35432432",
     "phone": "32432"
+  },
+  {
+    "id": 11,
+    "firstName": "Eleanor",
+    "lastName": "Vance",
+    "email": "eleanor.vance78@example.com",
+    "address": {
+      "street": "481 Oak Street",
+      "city": "New Haven",
+      "state": "CT",
+      "zipCode": "06511"
+    },
+    "phoneNumber": "203-555-9284"
   }
 ]
