@@ -2,11 +2,17 @@
 	"servers": {
 		"test-mcp-server": {
 			"type": "stdio",
-			"command": "npm",
+			"command": "node",
 			"args": [
-				"run",
-				"server:dev"
-			]
+				"build/server.js",
+			],
+			"cwd": "${workspaceFolder}",
+			"dev": {
+				"watch": "build/**/*.js",
+				"debug": {
+					"type": "node"
+				}
+			}
 		}
 	},
 	"inputs": []
