@@ -1,10 +1,8 @@
 # Learn MCP Server and Client
 
-A hands-on learning project for understanding the **Model Context Protocol (MCP)** through TypeScript implementation of both server and client components.
+This repository serves as a practical exploration of MCP concepts, learning how to build servers and clients using the `@modelcontextprotocol/sdk`. 
 
-## Overview
-
-This repository serves as a practical exploration of MCP concepts, demonstrating how to build servers and clients using the `@modelcontextprotocol/sdk`. The project implements a user management system to learn about MCP resources, tools, prompts, and AI integration patterns.
+The project implements a user management system to learn about MCP resources, tools, prompts, and AI integration patterns.
 
 ## Architecture
 
@@ -157,7 +155,7 @@ server.server.request({
 - Building interactive clients that consume MCP services
 - Integrating external AI models with MCP workflows
 
-> ![NOTE]
+> [!NOTE]
 > Created by following [WebDevSimplified's Video on YouTube](https://www.youtube.com/watch?v=ZoZxQwp1PiM)
 
 ---
